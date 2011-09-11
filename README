@@ -40,13 +40,20 @@ This layout:
     SSS B z x c v , . b n m / SSSSS
     CCC W Alt __________ Al RC CCC
 
+The key between the left Shift and z is the 105th key, and is a second
+Backspace. It exists on many European keyboards and some people love it,
+while some people hate it with their whole essence. The author has been
+a member of both groups.
+
+
 INSTALLATION
 
 In order to install the layout under Ubuntu 10.04, use the included
 install.py script which will take care of the rest. This should work
 in newer versions as well, however has not been tested with the Unity
 desktop or KDE and might not work in them. This version has only been
-tested with GNOME under Ubuntu 10.04.
+tested with GNOME under Ubuntu 10.04. Installation should not require
+restarting the X server.
 
 In order to install on other systems, you might need to change the
 options of the installer. See ./install.py --help for a description of
