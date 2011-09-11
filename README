@@ -15,10 +15,10 @@ contortionist exercise any more.
 
 The problem with QWERTY is, among others, that the right hand needs to
 move a lot -- especially in the wrist -- which can lead to Repetitive
-Strain Injury. If you are spending a lot of time typing, you should be
-aware of this and should know that you might be hurting yourself with
-an inappropriate keyboard layout. This layout makes it easy for people
-to try out something new, while alleviating some important issues.
+Strain Injury. If you spend a lot of time typing, you should be aware
+of this and should know that you might be hurting yourself with an
+inappropriate keyboard layout. This layout makes it easy for people to
+try out something new, while alleviating some important issues.
 
 
 The changes can be seen easily at the diagrams below:
@@ -57,14 +57,15 @@ to change the name of the xml file, normally rules/evdev.xml is used
 on Ubuntu 10.04 but it might be rules/xfree86.xml or rules/base.xml
 or rules/xorg.xml.
 
-Additionally, on some systems .lst files with the same base names are
-used, which are not supported by the installer, however editing them by
-hand should be fairly easy: under the !layout section you would add a
-line similar to:
+On some systems .lst files with the same base names are used instead.
+Those files are not supported by the installer, however editing them by
+hand should be fairly easy: in the !layout section you would add the line:
 
 us_split  USA Split
 
-This has, however, not been tested.
+Then, you should put the us_split file in the symbols/
+subdirectory. Finally, a restart of your X server might be required. This
+has, however, not been tested.
 
 
 USAGE
