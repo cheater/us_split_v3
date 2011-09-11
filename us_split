@@ -1,0 +1,68 @@
+// $XKeyboardConfig$
+
+//
+// $XdotOrg: xc/programs/xkbcomp/symbols/us,v 1.1.4.3 2004/03/05 13:41:33 eich Exp $
+// $XFree86: xc/programs/xkbcomp/symbols/us,v 1.6 2003/10/31 14:32:05 pascal Exp $
+
+default
+partial alphanumeric_keys modifier_keys 
+xkb_symbols "basic" {
+
+    name[Group1]= "USA Split";
+
+    // Alphanumeric section
+    key <TLDE> {	[     grave,	asciitilde	]	};
+    key <AE01> {	[	  1,	exclam 		]	};
+    key <AE02> {	[	  2,	at		]	};
+    key <AE03> {	[	  3,	numbersign	]	};
+    key <AE04> {	[	  4,	dollar		]	};
+    key <AE05> {	[	  5,	percent		]	};
+    key <AE06> {	[     minus,	underscore	]	};
+    key <AE07> {	[     equal,	plus		]	};
+    key <AE08> {	[	  6,	asciicircum	]	};
+    key <AE09> {	[	  7,	ampersand	]	};
+    key <AE10> {	[	  8,	asterisk	]	};
+    key <AE11> {	[	  9,	parenleft	]	};
+    key <AE12> {	[	  0,	parenright	]	};
+
+    key <AD01> {	[	  q,	Q 		]	};
+    key <AD02> {	[	  w,	W		]	};
+    key <AD03> {	[	  e,	E		]	};
+    key <AD04> {	[	  r,	R		]	};
+    key <AD05> {	[	  t,	T		]	};
+    key <AD06> {	[ bracketleft,	braceleft	]	};
+    key <AD07> {	[ bracketright,	braceright	]	};
+    key <AD08> {	[	  y,	Y		]	};
+    key <AD09> {	[	  u,	U		]	};
+    key <AD10> {	[	  i,	I		]	};
+    key <AD11> {	[	  o,	O		]	};
+    key <AD12> {	[	  p,	P		]	};
+
+    key <AC01> {	[	  a,	A 		]	};
+    key <AC02> {	[	  s,	S		]	};
+    key <AC03> {	[	  d,	D		]	};
+    key <AC04> {	[	  f,	F		]	};
+    key <AC05> {	[	  g,	G		]	};
+    key <AC06> {	[ backslash,         bar	]	};
+    key <AC07> {	[ apostrophe,	quotedbl	]	};
+    key <AC08> {	[	  h,	H		]	};
+    key <AC09> {	[	  j,	J		]	};
+    key <AC10> {	[	  k,	K		]	};
+    key <AC11> {	[	  l,	L		]	};
+
+    key <AB01> {	[	  z,	Z 		]	};
+    key <AB02> {	[	  x,	X		]	};
+    key <AB03> {	[	  c,	C		]	};
+    key <AB04> {	[	  v,	V		]	};
+    key <AB05> {	[     comma,	less		]	};
+    key <AB06> {	[    period,	greater		]	};
+    key <AB07> {	[	  b,	B		]	};
+    key <AB08> {	[	  n,	N		]	};
+    key <AB09> {	[	  m,	M		]	};
+    key <AB10> {	[     slash,	question	]	};
+
+    key <BKSL> {	[ semicolon,	colon		]	};
+
+    key <LSGT> {	[ BackSpace,	Delete		]	};
+    // End alphanumeric section
+};
