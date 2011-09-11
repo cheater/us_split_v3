@@ -2,7 +2,7 @@
 
 import os, sys
 
-def add_xml(xml_file):
+def add_xml(xml_file, symbols_file):
     """ Installs the data needed in the XML file so that X can find the layout.
         Should add something like the following under the layoutList element:
 
@@ -28,7 +28,7 @@ def add_xml(xml_file):
         vl          =  se(layout,   'variantList'       )
         ci          =  se(layout,   'configItem'        )
         name        =  se(ci,       'name'              )
-        name.text   =     'us_split'
+        name.text   =     symbols_file
         sdesc       =  se(ci,       'shortDescription'  )
         sdesc.text  =     'U_SA'
         desc        =  se(ci,       'description'       )
@@ -45,9 +45,6 @@ def copy_symbols(source, target):
     print "Copying `%s' -> `%s'" % (source, target)
     shutil.copyfile(source, target)
 
-# {'symbols_dir': 'symbols', 'symbols_target_name': 'us_split', 'dirname':
-# '/usr/share/X11/xkb', 'xml_file_path': 'rules/evdev.xml',
-# 'symbols_source_name': 'us_split'}
 def install(
     dirname,
     symbols_source_name,
@@ -85,7 +82,7 @@ def install(
         return False
 
     copy_symbols(symbols_source_name, target)
-    add_xml(xml_file)
+    add_xml(xml_file, symbols_target_name)
     return True
 
 def main():
@@ -140,7 +137,7 @@ def main():
         default=d,
         )
 
-    (options, args) = parser.parse_args()
+    options = parser.parse_args()[0]
     return install(**options.__dict__)
 
 if '__main__' == __name__:
