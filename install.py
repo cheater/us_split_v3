@@ -13,7 +13,7 @@ A keyboard layout for xkb. Geared specifically towards reducing RSI, this
 layout is nearly identical to US-QWERTY, except there is a two-key split
 between the T and Y columns into which symbols from the furthest right of
 each row are placed. This way, the hands can assume a more natural position
-(sort of like with Dvorak) and hitting enter is not a contortionist exercise
+(similarly as with Dvorak) and hitting Enter is not a contortionist exercise
 any longer.
 
 One of the problems with US-QWERTY is that the palm of the right hand needs
@@ -55,11 +55,12 @@ Control, or Meta key.
 INSTALLATION
 
 In order to install the layout under Ubuntu 10.04 and similar operating
-systems, use the included install.py script which will take care of the whole
-process. This should work in newer versions of Ubuntu as well, however it has
-not been tested with the Unity desktop or KDE and might not work in them.
-This version has only been tested with GNOME under Ubuntu 10.04. Installation
-should not require restarting the X server.
+systems, use the included install.py script which will complete the whole
+process. You might need to execute it as a superuser. The installer should
+work in newer Ubuntu versions as well, however it has not been tested with
+the Unity desktop or KDE and might not work in them. This version has only
+been tested with GNOME under Ubuntu 10.04. Installation should not require
+restarting the X server.
 
 In order to install on other systems, you might need to change the options of
 the installer. See ./install.py --help for a description of the options. For
@@ -75,20 +76,23 @@ by hand is fairly easy; in the !layout section you would add the line:
 
         us_split  USA Split
 
-Then, you should copy the us_split file into the symbols/ subdirectory of the
-xkb directory. Finally, a restart of your X server might be required. This
-procedure has, however, not been tested.
+Then, you should copy the us_split file into the "symbols" subdirectory of
+the xkb directory. A restart of your X server might now be required. That
+should be all that is necessary; this installation procedure has, however,
+not been tested.
 
 
 USAGE
 
 In order to use the layout, if you are in GNOME you would use the program
 gnome-keyboard-properties(1) which can normally be accessed in the System
-menu, Preferences submenu. Alternatively, it can be started from the
-terminal. Then, in the Layouts tab, you would click the Add button and
-navigate to the By Language tab. In this tab, select English as the language
-and then find USA Split in the Variants dropdown. Finally, click Add. You can
-then select the layout from the list.
+menu, Preferences submenu. Alternatively, it can be started from a terminal.
+
+Once the Keyboard Properties are visible, you would select the Layouts tab,
+where you would then click the Add button and navigate to the By Language
+tab. In this tab, select English as the language and then find USA Split in
+the Variants dropdown. Finally, click Add. You can then select the layout
+from the list.
 
 
 STABILITY
