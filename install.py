@@ -48,6 +48,9 @@ Backspace. It exists on many European keyboards and some people love it,
 while some people hate it with their whole essence. The author has been
 a member of both groups.
 
+Naturally, this can be used with GNOME's keyboard layout options in order
+to turn the Caps Lock key into another Escape, Control, or Meta key.
+
 
 INSTALLATION
 
