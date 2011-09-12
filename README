@@ -6,24 +6,23 @@ an xkb keyboard layout
 
 ABOUT THIS PROGRAM
 
-A keyboard layout for xkb. Geared specifically towards reducing RSI,
-this layout is nearly identical to QWERTY, except there is a two-key
-split between the T and Y columns into which symbols from the furthest
-right of each row are placed. This way, the hands can assume a more
-natural position (sort of like with Dvorak) and hitting enter is not a
-contortionist exercise any more.
+A keyboard layout for xkb. Geared specifically towards reducing RSI, this
+layout is nearly identical to US-QWERTY, except there is a two-key split
+between the T and Y columns into which symbols from the furthest right of
+each row are placed. This way, the hands can assume a more natural position
+(sort of like with Dvorak) and hitting enter is not a contortionist exercise
+any longer.
 
-The problem with QWERTY is, among others, that the right hand needs to
-move a lot -- especially in the wrist -- which can lead to Repetitive
-Strain Injury. If you spend a lot of time typing, you should be aware
-of this and should know that you might be hurting yourself with an
-inappropriate keyboard layout. This layout makes it easy for people to
-try out something new, while alleviating some important issues.
-
+One of the problems with US-QWERTY is that the palm of the right hand needs
+to move a lot -- especially bending in the wrist -- which can lead to
+Repetitive Strain Injury. If you spend a lot of time typing, you should be
+aware of this and should know that you might be hurting yourself with an
+inappropriate keyboard layout. This layout makes it easy for people to try
+out something new while mitigating some important issues.
 
 The changes can be seen easily at the diagrams below:
 
-Normal QWERTY:
+Normal US-QWERTY:
 
      ` 1 2 3 4 5 6 7 8 9 0 - = BBBB
     Tab q w e r t y u i o p [ ] RRR
@@ -40,59 +39,59 @@ This layout:
     SSS B z x c v , . b n m / SSSSS
     CCC W Alt __________ AA RC CCCC
 
-The key between the left Shift and z is the 105th key, and is a second
-Backspace. It exists on many European keyboards and some people love it,
-while some people hate it with their whole essence. The author has been
-a member of both groups.
+The key between the left Shift and z is the 105th key. It exists on many
+European keyboards and some people love it, while others hate it with
+passion. The author has been a member of both groups. It is mapped as a
+second Backspace. 
 
-Naturally, this can be used with GNOME's keyboard layout options in order
-to turn the Caps Lock key into another Escape, Control, or Meta key.
+Naturally, this layout can be used in conjunction with GNOME's keyboard
+layout options in order to turn the Caps Lock key into another Escape,
+Control, or Meta key.
 
 
 INSTALLATION
 
-In order to install the layout under Ubuntu 10.04, use the included
-install.py script which will take care of the rest. This should work
-in newer versions as well, however has not been tested with the Unity
-desktop or KDE and might not work in them. This version has only been
-tested with GNOME under Ubuntu 10.04. Installation should not require
-restarting the X server.
+In order to install the layout under Ubuntu 10.04 and similar operating
+systems, use the included install.py script which will take care of the whole
+process. This should work in newer versions of Ubuntu as well, however it has
+not been tested with the Unity desktop or KDE and might not work in them.
+This version has only been tested with GNOME under Ubuntu 10.04. Installation
+should not require restarting the X server.
 
-In order to install on other systems, you might need to change the
-options of the installer. See ./install.py --help for a description of
-the options. Specifically, the xkb directory might have moved. You are
-searching for a directory called 'xkb' with subdirectories including
-'rules' and 'symbols', as well as a few others. You might also need
-to change the name of the xml file, normally rules/evdev.xml is used
-on Ubuntu 10.04 but it might be rules/xfree86.xml or rules/base.xml
+In order to install on other systems, you might need to change the options of
+the installer. See ./install.py --help for a description of the options. For
+example, the xkb directory might have moved. You would search for a directory
+called "xkb" with the subdirectories "rules" and "symbols", among others. You
+might also need to change the name of the xml file. Normally, rules/evdev.xml
+is used on Ubuntu 10.04, but it might be rules/xfree86.xml, rules/base.xml,
 or rules/xorg.xml.
 
-On some systems .lst files with the same base names are used instead.
-Those files are not supported by the installer, however editing them by
-hand should be fairly easy: in the !layout section you would add the line:
+On some systems, lst files with the same base names are used instead of xml
+files. Those files are not supported by the installer, however editing them
+by hand is fairly easy; in the !layout section you would add the line:
 
-us_split  USA Split
+        us_split  USA Split
 
-Then, you should put the us_split file in the symbols/
-subdirectory. Finally, a restart of your X server might be required. This
-has, however, not been tested.
+Then, you should copy the us_split file into the symbols/ subdirectory of the
+xkb directory. Finally, a restart of your X server might be required. This
+procedure has, however, not been tested.
 
 
 USAGE
 
-In order to use the layout, under GNOME you would use the program
-gnome-keyboard-properties(1) which can normally be accessed in the
-System menu, Preferences submenu. Alternatively, it can be run from the
+In order to use the layout, if you are in GNOME you would use the program
+gnome-keyboard-properties(1) which can normally be accessed in the System
+menu, Preferences submenu. Alternatively, it can be started from the
 terminal. Then, in the Layouts tab, you would click the Add button and
-navigate to the By Language tab. In this tab, select English as the
-language and then find USA Split in the Variants dropdown. Finally,
-click Add. You can then select the layout from the list.
+navigate to the By Language tab. In this tab, select English as the language
+and then find USA Split in the Variants dropdown. Finally, click Add. You can
+then select the layout from the list.
 
 
 STABILITY
 
-Note that the layout may change (even drastically!) in the future. Older
-versions should be available from the usual sources.
+The layout may change (even drastically!) in the future. Older versions
+should be available from the usual sources.
 
 
 LICENSE
