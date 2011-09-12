@@ -239,7 +239,8 @@ def main():
         metavar='FILE',
         default=d,
         )
-    d = 'us_split'
+    script_dir = os.path.dirname(sys.argv[0])
+    d = os.path.normpath(os.path.join(script_dir, 'us_split'))
     parser.add_option(
         '-f',
         '--symbols-source-name',
