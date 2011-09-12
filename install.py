@@ -28,11 +28,11 @@ The changes can be seen easily at the diagrams below:
 
 Normal QWERTY:
 
-     ` 1 2 3 4 5 6 7 8 9 0 - = Back
+     ` 1 2 3 4 5 6 7 8 9 0 - = BBBB
     Tab q w e r t y u i o p [ ] RRR
     Caps a s d f g h j k l ; ' \ RR
-    Shf . z x c v b n m , . / Shift
-    Ctr W Alt __________ Al RC Ctrl
+    SSS < z x c v b n m , . / SSSSS
+    CCC W AAA __________ AA RC CCCC
 
 
 This layout:
@@ -41,7 +41,7 @@ This layout:
     Tab q w e r t [ ] y u i o p RRR
     Caps a s d f g \ ' h j k l ; RR
     SSS B z x c v , . b n m / SSSSS
-    CCC W Alt __________ Al RC CCC
+    CCC W Alt __________ AA RC CCCC
 
 The key between the left Shift and z is the 105th key, and is a second
 Backspace. It exists on many European keyboards and some people love it,
