@@ -61,7 +61,7 @@ palm of the right hand to the right after every finished sentence, creating a
 very fast pathway towards RSI. There have been attempts to solve the problem
 by using smaller keys for the right-hand-side symbols, as well as by making
 the enter key bigger. Some of them have been partly successful, however none
-of them was fixing the problem at its source which is an inconvenient layout.
+of them was fixing the problem at its source, which is an inadequate layout.
 
 The key between the left Shift and z is the 105th key. It exists on many
 European keyboards and some people love it, while others hate it with
