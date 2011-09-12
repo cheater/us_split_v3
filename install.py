@@ -111,7 +111,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-import os, sys
+import os, sys, shutil
 
 def add_xml(xml_file, symbols_file):
     """ Installs the data needed in the XML file so that X can find the layout.
@@ -124,7 +124,6 @@ def add_xml(xml_file, symbols_file):
         <description>USA Split</description>
         <languageList><iso639Id>eng</iso639Id></languageList>
       </configItem>
-      <variantList/>
     </layout>
 
         Adds it all on one line, if you care (or can't use the installer) then
@@ -136,7 +135,6 @@ def add_xml(xml_file, symbols_file):
     for ll in [x for x in t.getroot().getchildren() if x.tag == 'layoutList']:
         # XML is ugly even if it's not XML.
         layout      =  se(ll,       'layout'            )
-        vl          =  se(layout,   'variantList'       )
         ci          =  se(layout,   'configItem'        )
         name        =  se(ci,       'name'              )
         name.text   =     symbols_file
