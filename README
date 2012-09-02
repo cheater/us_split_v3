@@ -24,22 +24,22 @@ The changes can be seen easily at the diagrams below:
 
 Normal US-QWERTY:
 
-    Esc  F1 ... F12
+    Caps F1 ... F12
 
      ` 1 2 3 4 5 6 7 8 9 0 - = BBBB
     Tab q w e r t y u i o p [ ] RRR
-    Caps a s d f g h j k l ; ' \ RR
+    Esc  a s d f g h j k l ; ' \ RR
     SSS < z x c v b n m , . / SSSSS
     CCC W AAA __________ AA RC CCCC
 
 
 This layout:
 
-    Esc  F1 ... F12
+    Caps F1 ... F12
 
      ` 1 2 3 4 5 - = 6 7 8 9 0 BBBB
     Tab q w e r t [ ] y u i o p RRR
-    Caps a s d f g \ ' h j k l ; RR
+    Esc  a s d f g \ ' h j k l ; RR
     SSS B z x c v , . b n m / SSSSS
     CCC W Alt __________ AA RC CCCC
 
@@ -68,6 +68,9 @@ The key between the left Shift and z is the 105th key. It exists on many
 European keyboards and some people love it, while others hate it with
 passion. The author has been a member of both groups. It is mapped as a
 second Backspace. 
+
+Caps Lock is placed where Esc was and Esc is placed where Caps Lock was. This
+is hardcoded for now, but might be configurable in the future.
 
 Naturally, this layout can be used in conjunction with GNOME's keyboard
 layout options in order to turn the Caps Lock key into another Escape,
