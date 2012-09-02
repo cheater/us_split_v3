@@ -24,6 +24,8 @@
 // 
 // Normal US-QWERTY:
 // 
+//     Esc  F1 ... F12
+//
 //      ` 1 2 3 4 5 6 7 8 9 0 - = BBBB
 //     Tab q w e r t y u i o p [ ] RRR
 //     Caps a s d f g h j k l ; ' \ RR
@@ -32,6 +34,8 @@
 // 
 // 
 // This layout:
+//
+//     Esc  F1 ... F12
 // 
 //      ` 1 2 3 4 5 - = 6 7 8 9 0 BBBB
 //     Tab q w e r t [ ] y u i o p RRR
