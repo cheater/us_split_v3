@@ -1,0 +1,9 @@
+to load an xkb layout:
+in a tty, as root: loadkeys us_split
+in a terminal under X, as a regular user: setxkbmap us_split
+to change the default: change /etc/default/keyboard, set XKBLAYOUT="us_split,us"
+
+to change input rate (the below sets the delay to 250 msec, repeat rate to 30):
+in a tty, as root: kbdrate -d 250 -r 30
+in a terminal under X, as a regular user: xset r rate 250 30
+to change the default: change /etc/kbd/config, set the variables KEYBOARD_RATE="30" and KEYBOARD_DELAY="250".
