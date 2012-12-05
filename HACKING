@@ -36,3 +36,9 @@ http://www.freerdp.com/wiki/doku.php?id=keyboard#xkb_symbolic_key_codes
 
 http://www.x.org/releases/X11R7.5/doc/input/XKB-Enhancing.html
 # How to further enhance XKB configuration
+
+
+
+to see the current key map used by X, do: xkbcomp :0.0
+this will create a file called server-0_0.xkb in the current directory. Read it
+to spot any issues.
