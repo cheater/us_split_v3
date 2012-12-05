@@ -37,6 +37,19 @@ http://www.freerdp.com/wiki/doku.php?id=keyboard#xkb_symbolic_key_codes
 http://www.x.org/releases/X11R7.5/doc/input/XKB-Enhancing.html
 # How to further enhance XKB configuration
 
+http://www.charvolant.org/~doug/xkb/html/xkb.html
+# "An unreliable guide to xkb configuration"
+
+# googling for "stackoverflow xkb" can yield surprisingly insightful info, eg:
+http://unix.stackexchange.com/questions/55933/create-and-set-custom-keyboard-layout
+http://superuser.com/questions/483088/an-xkb-keyboard-map-that-responds-to-the-left-and-right-shift-key-individually
+http://superuser.com/questions/339643/how-to-define-letter-in-custom-layout-xkb
+http://superuser.com/questions/408883/swap-ctrl-with-a-character-key-in-xkb
+
+http://www.in-ulm.de/~mascheck/X11/xmodmap.html
+# Some hints about xmodmap(1) and the X11 keyboard model
+
+https://wiki.archlinux.org/index.php/XKB
 
 
 to see the current key map used by X, do: xkbcomp :0.0
