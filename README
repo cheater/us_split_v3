@@ -1,6 +1,6 @@
 NAME
 
-us_split
+us_split_k400
 an xkb keyboard layout
 
 
@@ -98,10 +98,10 @@ On some systems, lst files with the same base names are used instead of xml
 files. Those files are not supported by the installer, however editing them
 by hand is fairly easy; in the !layout section you would add the line:
 
-        us_split  USA Split
+        us_split_k400  USA Split (Logitech k400)
 
-Next, you should copy the us_split file into the "symbols" subdirectory of
-the xkb directory. A restart of your X server might now be required. That
+Next, you should copy the us_split_k400 file into the "symbols" subdirectory
+of the xkb directory. A restart of your X server might now be required. That
 should be all that is necessary; this installation procedure has, however,
 not been tested.
 
