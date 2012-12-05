@@ -205,5 +205,7 @@ xkb_symbols "basic" {
 
     // Swap Caps Lock and Escape.
     key <CAPS> {        [       Escape  ]       };
-    key <ESC>  {        [     Caps_Lock    ]       };
+    // key <ESC>  {        [     Caps_Lock    ]       };
+    key <ESC> { type[Group1]="TWO_LEVEL", [ Multi_key, Multi_key ] };
+
 };
