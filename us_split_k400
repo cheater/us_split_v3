@@ -200,7 +200,11 @@ xkb_symbols "basic" {
 
     key <BKSL> {	[ semicolon,	colon		]	};
 
-    key <LSGT> {	[ BackSpace,	Delete		]	};
+    key <LSGT> {
+	type[Group1]="ONE_LEVEL",
+        symbols[Group1]= [        ISO_Level3_Shift ]
+    };
+
     // End alphanumeric section
 
     // Swap Caps Lock and Escape.
