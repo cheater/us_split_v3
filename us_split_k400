@@ -169,10 +169,10 @@ xkb_symbols "basic" {
     key <AD05> {	[	  t,	T		]	};
     key <AD06> {	[ bracketleft,	braceleft	]	};
     key <AD07> {	[ bracketright,	braceright	]	};
-    key <AD08> {	[	  y,	Y		]	};
-    key <AD09> {	[	  u,	U		]	};
-    key <AD10> {	[	  i,	I		]	};
-    key <AD11> {	[	  o,	O		]	};
+    key <AD08> {	[	  y, Y, Home, Home	]	};
+    key <AD09> {	[	  u, U, Next, Next	]	};
+    key <AD10> {	[	  i, I, Prior, Prior	]	};
+    key <AD11> {	[	  o, O, End, End	]	};
     key <AD12> {	[	  p,	P		]	};
 
     key <AC01> {	[	  a,	A 		]	};
@@ -182,10 +182,10 @@ xkb_symbols "basic" {
     key <AC05> {	[	  g,	G		]	};
     key <AC06> {	[ backslash,         bar	]	};
     key <AC07> {	[ apostrophe,	quotedbl	]	};
-    key <AC08> {	[	  h,	H		]	};
-    key <AC09> {	[	  j,	J		]	};
-    key <AC10> {	[	  k,	K		]	};
-    key <AC11> {	[	  l,	L		]	};
+    key <AC08> {	[	h, H, Left, Left	]	};
+    key <AC09> {	[	j, J, Down, Down	]	};
+    key <AC10> {	[	k, K, Up, Up		]	};
+    key <AC11> {	[	l, L, Right, Right	]	};
 
     key <AB01> {	[	  z,	Z 		]	};
     key <AB02> {	[	  x,	X		]	};
