@@ -1,6 +1,6 @@
 // NAME
 //
-// us_split_k400
+// us_split_kw6000
 // an xkb keyboard layout
 //
 //
@@ -29,7 +29,7 @@
 //      ` 1 2 3 4 5 6 7 8 9 0 - = BBBB
 //     Tab q w e r t y u i o p [ ] RRR
 //     Esc  a s d f g h j k l ; ' \ RR
-//     SSS < z x c v b n m , . / SSSSS
+//     SS  < z x c v b n m , . / SSSSS
 //     CCC W AAA __________ AA RC CCCC
 //
 //
@@ -40,8 +40,8 @@
 //      ` 1 2 3 4 5 - = 6 7 8 9 0 BBBB
 //     Tab q w e r t [ ] y u i o p RRR
 //     Esc  a s d f g \ ' h j k l ; RR
-//     SSS B z x c v , . b n m / SSSSS
-//     CCC W Alt __________ AA RC CCCC
+//     SS L3 z x c v , . b n m / SSSSS
+//     CCC W Alt __________ AA L3 CCCC
 //
 // The symbol keys, which do not get typed very often, have been placed in the
 // middle. This is analogous to them being out of the reach of the right hand in
@@ -98,9 +98,9 @@
 // files. Those files are not supported by the installer, however editing them
 // by hand is fairly easy; in the !layout section you would add the line:
 //
-//         us_split_k400  USA Split (Logitech k400)
+//         us_split_kw6000  USA Split (Cherry KW 6000/Perixx Periboard 804/804i)
 //
-// Next, you should copy the us_split_k400 file into the "symbols" subdirectory
+// Next, you should copy the us_split_kw6000 file into the "symbols" subdirectory
 // of the xkb directory. A restart of your X server might now be required. That
 // should be all that is necessary; this installation procedure has, however,
 // not been tested.
