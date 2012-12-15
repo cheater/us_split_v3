@@ -243,7 +243,4 @@ xkb_symbols "basic" {
     modifier_map Mod1 { <RCTL> };
     modifier_map Mod1 { <RALT> };
     modifier_map Mod5 { ISO_Level3_Shift };
-    modifier_map Mod5 { <LSGT> };
-    modifier_map Mod5 { <LEFT> };
-    modifier_map Mod5 { <MENU> };
 };
