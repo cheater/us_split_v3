@@ -32,7 +32,7 @@ Normal US-QWERTY:
      ` 1 2 3 4 5 6 7 8 9 0 - = BBBB
     Tab q w e r t y u i o p [ ] RRR
     Esc  a s d f g h j k l ; ' \ RR
-    SSS < z x c v b n m , . / SSSSS
+    SS  < z x c v b n m , . / SSSSS
     CCC W AAA __________ AA RC CCCC
 
 
@@ -43,8 +43,8 @@ This layout:
      ` 1 2 3 4 5 - = 6 7 8 9 0 BBBB
     Tab q w e r t [ ] y u i o p RRR
     Esc  a s d f g \ ' h j k l ; RR
-    SSS B z x c v , . b n m / SSSSS
-    CCC W Alt __________ AA RC CCCC
+    SS L3 z x c v , . b n m / SSSSS
+    CCC W Alt __________ AA L3 CCCC
 
 The symbol keys, which do not get typed very often, have been placed in the
 middle. This is analogous to them being out of the reach of the right hand in
