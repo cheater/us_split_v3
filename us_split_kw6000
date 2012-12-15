@@ -235,6 +235,10 @@ xkb_symbols "basic" {
         type[Group1]="ONE_LEVEL",
         symbols[Group1]= [        ISO_Level3_Shift ]
     };
+    key <MENU> {
+        type[Group1]="ONE_LEVEL",
+        symbols[Group1]= [        ISO_Level3_Shift ]
+    };
 
     modifier_map Control { <DOWN> };
     modifier_map Control { <RGHT> };
