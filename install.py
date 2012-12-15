@@ -3,7 +3,7 @@
 """
 NAME
 
-us_split_k400
+us_split_kw6000
 an xkb keyboard layout
 
 
@@ -101,9 +101,9 @@ On some systems, lst files with the same base names are used instead of xml
 files. Those files are not supported by the installer, however editing them
 by hand is fairly easy; in the !layout section you would add the line:
 
-        us_split_k400  USA Split (Logitech k400)
+        us_split_kw6000  USA Split (Cherry KW 6000/Perixx Periboard 804/804i)
 
-Next, you should copy the us_split_k400 file into the "symbols" subdirectory
+Next, you should copy the us_split_kw6000 file into the "symbols" subdirectory
 of the xkb directory. A restart of your X server might now be required. That
 should be all that is necessary; this installation procedure has, however,
 not been tested.
@@ -152,9 +152,9 @@ def add_xml(xml_file, symbols_file):
 
     <layout>
       <configItem>
-        <name>us_split_k400</name>
-        <shortDescription>U SA 4</shortDescription>
-        <description>USA Split (Logitech k400)</description>
+        <name>us_split_kw6000</name>
+        <shortDescription>U SA 6</shortDescription>
+        <description>USA Split (Cherry KW 6000/Perixx Periboard 804/804i)</description>
         <languageList><iso639Id>eng</iso639Id></languageList>
       </configItem>
     </layout>
@@ -172,9 +172,9 @@ def add_xml(xml_file, symbols_file):
         name        =  se(ci,       'name'              )
         name.text   =     symbols_file
         sdesc       =  se(ci,       'shortDescription'  )
-        sdesc.text  =     'U_SA_4'
+        sdesc.text  =     'U_SA_6'
         desc        =  se(ci,       'description'       )
-        desc.text   =     'USA Split (Logitech k400)'
+        desc.text   =     'USA Split (Cherry KW 6000/Perixx Periboard 804/804i)'
         langs       =  se(ci,       'languageList'      )
         lang        =  se(langs,    'iso639Id'          )
         lang.text   =     'eng'
@@ -260,7 +260,7 @@ def main():
         metavar='DIRNAME',
         default=d,
         )
-    d = 'us_split_k400'
+    d = 'us_split_kw6000'
     parser.add_option(
         '-n',
         '--symbols-target-name',
@@ -270,7 +270,7 @@ def main():
         default=d,
         )
     script_dir = os.path.dirname(sys.argv[0])
-    d = os.path.normpath(os.path.join(script_dir, 'us_split_k400'))
+    d = os.path.normpath(os.path.join(script_dir, 'us_split_kw6000'))
     parser.add_option(
         '-f',
         '--symbols-source-name',
