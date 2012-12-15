@@ -218,8 +218,8 @@ xkb_symbols "basic" {
         symbols[Group1]=[ Alt_R, Meta_R ]
     };
     key <UP>   {
-        symbols[Group1]= [         Shift_R ],
-        symbols[Group2]= [         Shift_R ]
+        symbols[Group1]= [       Control_R ],
+        symbols[Group2]= [           Alt_R ]
        };
     key <DOWN> {
         symbols[Group1]= [       Control_R ],
