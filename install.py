@@ -172,9 +172,10 @@ def add_xml(xml_file, symbols_file):
         name        =  se(ci,       'name'              )
         name.text   =     symbols_file
         sdesc       =  se(ci,       'shortDescription'  )
-        sdesc.text  =     'U_SA_6'
+        sdesc.text  =     'U_SA_6_2'
         desc        =  se(ci,       'description'       )
-        desc.text   =     'USA Split (Cherry KW 6000/Perixx Periboard 804/804i)'
+        desc.text   =     'USA Split (Cherry KW 6000/Perixx ' +
+                          'Periboard 804/804i, two ISO Level 3 Shift keys)'
         langs       =  se(ci,       'languageList'      )
         lang        =  se(langs,    'iso639Id'          )
         lang.text   =     'eng'
