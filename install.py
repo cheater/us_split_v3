@@ -208,7 +208,7 @@ def delete_cache():
     import os
     for f in os.listdir(cache_dir):
         if 'xkm' == f.split('.')[-1]:
-            os.unlink(f)
+            os.unlink(os.path.join(cache_dir, f))
 
 def install(
     dirname,
