@@ -264,8 +264,8 @@ def install(
         return False
 
     copy_file(symbols_source, symbols_target, 'symbols')
-    copy_file(types_source, types_target, 'types')
-    copy_file(compat_source, compat_target, 'compat')
+    copy_file(types_source,   types_target,   'types'  )
+    copy_file(compat_source,  compat_target,  'compat' )
     add_xml(xml_file, symbols_target_basename)
     delete_cache()
     return True
