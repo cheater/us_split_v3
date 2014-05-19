@@ -276,6 +276,7 @@ def main():
     from optparse import OptionParser
 
     parser = OptionParser()
+
     d = '/usr/share/X11/xkb'
     parser.add_option(
         '-d',
@@ -285,6 +286,7 @@ def main():
         metavar='DIRNAME',
         default=d,
         )
+
     d = 'rules/evdev.xml'
     parser.add_option(
         '-x',
@@ -294,6 +296,7 @@ def main():
         metavar='FILE',
         default=d,
         )
+
     d = 'symbols'
     parser.add_option(
         '-s',
@@ -303,6 +306,7 @@ def main():
         metavar='DIRNAME',
         default=d,
         )
+
     d = 'us_split_kw6000_two_ISO_0_1'
     parser.add_option(
         '-n',
@@ -312,6 +316,7 @@ def main():
         metavar='FILE',
         default=d,
         )
+
     script_dir = os.path.dirname(sys.argv[0])
     d = os.path.normpath(
         os.path.join(script_dir, 'us_split_kw6000_two_ISO_0_1')
@@ -324,6 +329,7 @@ def main():
         metavar='FILE',
         default=d,
         )
+
     parser.add_option(
         '-C',
         '--only-delete-cache',
