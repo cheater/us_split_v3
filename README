@@ -107,7 +107,7 @@ not been tested.
 
 Note there is an example file called etc-default-keyboard. It's an example of
 the file /etc/default/keyboard, which should normally be sourced by the file
-/etc/default/console. It sets the layout that is loaded in the TTYs.
+/etc/default/console-setup. It sets the layout that is loaded in the TTYs.
 
 
 USAGE
