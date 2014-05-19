@@ -182,17 +182,17 @@ def add_xml(xml_file, symbols_file):
     print 'Updating XML file: `%s\'' % (xml_file)
     t.write(xml_file)
 
-def copy_symbols(source, target):
-    """ Copies the symbols file from source to target. Really just a wrapper.
+def copy_file(source, target, what):
+    """ Copies the file from source to target. Really just a wrapper.
         """
-    print "Copying `%s' -> `%s'" % (source, target)
+    print "Copying %s: `%s' -> `%s'" % (what, source, target)
     shutil.copyfile(source, target)
 
 def install(
     dirname,
-    symbols_source_name,
+    symbols_source,
     symbols_dir,
-    symbols_target_name,
+    symbols_target_basename,
     xml_file_path,
     ):
     """ Copy symbols_file to symbols_dir and augument xml_file with the layout
@@ -201,15 +201,30 @@ def install(
 
     errors = []
 
+    def check_can_copy(source, target, what):
+        errors = []
+        if not os.path.exists(source):
+            errors.append('Cannot find the %s file %s' % (what, source))
+        target_dir = os.path.dirname(os.path.abspath(target))
+        if not os.path.exists(target_dir):
+            errors.append('Cannot find %s directory %s' % (what, target_dir))
+        if not os.access(target_dir, os.W_OK):
+            errors.append('Cannot write to the %s directory %s' % (what, target_dir))
+        return errors
+
     # prepare stuff for copying the symbols file
-    target = os.path.join(dirname, symbols_dir, symbols_target_name)
-    if not os.path.exists(symbols_source_name):
-        errors.append('Cannot find the symbols file %s' % symbols_source_name)
-    target_dir = os.path.dirname(os.path.abspath(target))
-    if not os.path.exists(target_dir):
-        errors.append('Cannot find symbols directory %s' % target_dir)
-    if not os.access(target_dir, os.W_OK):
-        errors.append('Cannot write to the symbols directory %s' % target_dir)
+    symbols_target = os.path.join(dirname, symbols_dir, symbols_target_basename)
+    check_can_copy(symbols_source, symbols_target, 'symbols')
+
+    # prepare stuff for copying the types file
+    types_source = 'types-threelevelwithshift'
+    types_target = os.path.join(dirname, 'types', 'threelevelwithshift')
+    check_can_copy(types_source, types_target, 'types')
+
+    # prepare stuff for copying the compat file
+    compat_source = 'compat-threelevelwithshift'
+    compat_target = os.path.join(dirname, 'compat', 'threelevelwithshift')
+    check_can_copy(compat_source, compat_target, 'compat')
 
     # prepare stuff for installing metadata into the xml file
     xml_file = os.path.join(dirname, xml_file_path)
@@ -224,8 +239,10 @@ def install(
         print '\n'.join(errors)
         return False
 
-    copy_symbols(symbols_source_name, target)
-    add_xml(xml_file, symbols_target_name)
+    copy_file(symbols_source, symbols_target, 'symbols')
+    copy_file(types_source, types_target, 'types')
+    copy_file(compat_source, compat_target, 'compat')
+    add_xml(xml_file, symbols_target_basename)
     return True
 
 def main():
@@ -264,8 +281,8 @@ def main():
     d = 'us_split_kw6000_two_ISO_0_1'
     parser.add_option(
         '-n',
-        '--symbols-target-name',
-        dest='symbols_target_name',
+        '--symbols-target-basename',
+        dest='symbols_target_basename',
         help='install layout as FILE, default: `%s\'' % d,
         metavar='FILE',
         default=d,
@@ -276,8 +293,8 @@ def main():
         )
     parser.add_option(
         '-f',
-        '--symbols-source-name',
-        dest='symbols_source_name',
+        '--symbols-source',
+        dest='symbols_source',
         help='install layout from FILE, default: `%s\'' % d,
         metavar='FILE',
         default=d,
