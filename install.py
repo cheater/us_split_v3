@@ -1,4 +1,4 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python
 
 """
 NAME
@@ -152,9 +152,9 @@ def add_xml(xml_file, symbols_file):
 
     <layout>
       <configItem>
-        <name>us_split_kw6000</name>
+        <name>us_split_kw6000_two_ISO_0_1</name>
         <shortDescription>U SA 6</shortDescription>
-        <description>USA Split (Cherry KW 6000/Perixx Periboard 804/804i)</description>
+        <description>USA Split (Cherry KW 6000/Perixx Periboard 804/804i, two ISO Level 3 Shift Keys, v0.1)</description>
         <languageList><iso639Id>eng</iso639Id></languageList>
       </configItem>
     </layout>
@@ -172,10 +172,10 @@ def add_xml(xml_file, symbols_file):
         name        =  se(ci,       'name'              )
         name.text   =     symbols_file
         sdesc       =  se(ci,       'shortDescription'  )
-        sdesc.text  =     'U_SA_6_2'
+        sdesc.text  =     'U_SA_6_2_0_1'
         desc        =  se(ci,       'description'       )
-        desc.text   =     'USA Split (Cherry KW 6000/Perixx ' +
-                          'Periboard 804/804i, two ISO Level 3 Shift keys)'
+        desc.text   =     'USA Split (Cherry KW 6000/Perixx Periboard '\
+                          '804/804i, two ISO Level 3 Shift keys, v0.1)'
         langs       =  se(ci,       'languageList'      )
         lang        =  se(langs,    'iso639Id'          )
         lang.text   =     'eng'
@@ -261,7 +261,7 @@ def main():
         metavar='DIRNAME',
         default=d,
         )
-    d = 'us_split_kw6000'
+    d = 'us_split_kw6000_two_ISO_0_1'
     parser.add_option(
         '-n',
         '--symbols-target-name',
@@ -271,7 +271,9 @@ def main():
         default=d,
         )
     script_dir = os.path.dirname(sys.argv[0])
-    d = os.path.normpath(os.path.join(script_dir, 'us_split_kw6000'))
+    d = os.path.normpath(
+        os.path.join(script_dir, 'us_split_kw6000_two_ISO_0_1')
+        )
     parser.add_option(
         '-f',
         '--symbols-source-name',
