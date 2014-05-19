@@ -215,17 +215,23 @@ def install(
 
     # prepare stuff for copying the symbols file
     symbols_target = os.path.join(dirname, symbols_dir, symbols_target_basename)
-    check_can_copy(symbols_source, symbols_target, 'symbols')
+    errors.extend(check_can_copy(
+        symbols_source, symbols_target, 'symbols'
+        ))
 
     # prepare stuff for copying the types file
     types_source = 'types-threelevelwithshift'
     types_target = os.path.join(dirname, 'types', 'threelevelwithshift')
-    check_can_copy(types_source, types_target, 'types')
+    errors.extend(check_can_copy(
+        types_source, types_target, 'types'
+        ))
 
     # prepare stuff for copying the compat file
     compat_source = 'compat-threelevelwithshift'
     compat_target = os.path.join(dirname, 'compat', 'threelevelwithshift')
-    check_can_copy(compat_source, compat_target, 'compat')
+    errors.extend(check_can_copy(
+        compat_source, compat_target, 'compat'
+        ))
 
     # prepare stuff for installing metadata into the xml file
     xml_file = os.path.join(dirname, xml_file_path)
