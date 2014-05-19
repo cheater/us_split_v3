@@ -202,6 +202,14 @@ def copy_file(source, target, what):
     print "Copying %s: `%s' -> `%s'" % (what, source, target)
     shutil.copyfile(source, target)
 
+cache_dir = '/var/lib/xkb'
+
+def delete_cache():
+    import os
+    for f in os.listdir(cache_dir):
+        if 'xkm' == f.split('.')[-1]:
+            os.unlink(f)
+
 def install(
     dirname,
     symbols_source,
@@ -243,6 +251,12 @@ def install(
     if not os.access(xml_file, os.W_OK):
         errors.append('Cannot write to evdev.xml file')
 
+    # check that you can delete the cache files
+    if not os.access(cache_dir, os.W_OK):
+        errors.append(
+            'Cannot delete cache files: no write permission to %s' % cache_dir
+            )
+
     if errors:
         print 'The installer cannot continue because it encountered the '\
             'following problems:'
@@ -253,6 +267,7 @@ def install(
     copy_file(types_source, types_target, 'types')
     copy_file(compat_source, compat_target, 'compat')
     add_xml(xml_file, symbols_target_basename)
+    delete_cache()
     return True
 
 def main():
@@ -309,9 +324,19 @@ def main():
         metavar='FILE',
         default=d,
         )
+    parser.add_option(
+        '-C',
+        '--only-delete-cache',
+        dest='only_delete_cache',
+        help='do not run installation, '\
+            'only delete cache in %s/*.xkm' % cache_dir,
+        default=False,
+        action='store_true',
+        )
 
     options = parser.parse_args()[0]
-    return install(**options.__dict__)
+    if options.only_delete_cache: return delete_cache()
+    else: return install(**options.__dict__)
 
 if '__main__' == __name__:
     try:
