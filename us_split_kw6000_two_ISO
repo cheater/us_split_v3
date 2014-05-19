@@ -142,7 +142,7 @@
 
 
 default
-partial alphanumeric_keys modifier_keys
+// partial alphanumeric_keys modifier_keys
 xkb_symbols "basic" {
 
     name[Group1]= "USA Split";
@@ -162,30 +162,62 @@ xkb_symbols "basic" {
     key <AE11> {	[	  9,	parenleft	]	};
     key <AE12> {	[	  0,	parenright	]	};
 
-    key <AD01> {	[	  q,	Q 		]	};
-    key <AD02> {	[	  w,	W		]	};
-    key <AD03> {	[	  e,	E		]	};
-    key <AD04> {	[	  r,	R		]	};
+    key <AD01> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	  q, Q, Home, Home	]	};
+    key <AD02> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	  w, W, Next, Next	]	};
+    key <AD03> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	  e, E, Prior, Prior	]	};
+    key <AD04> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	  r, R, End, End	]	};
     key <AD05> {	[	  t,	T		]	};
     key <AD06> {	[ bracketleft,	braceleft	]	};
     key <AD07> {	[ bracketright,	braceright	]	};
-    key <AD08> {	[	  y, Y, Home, Home	]	};
-    key <AD09> {	[	  u, U, Next, Next	]	};
-    key <AD10> {	[	  i, I, Prior, Prior	]	};
-    key <AD11> {	[	  o, O, End, End	]	};
+    key <AD08> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	  y, Y, Home, Home	]	};
+    key <AD09> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	  u, U, Next, Next	]	};
+    key <AD10> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	  i, I, Prior, Prior	]	};
+    key <AD11> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	  o, O, End, End	]	};
     key <AD12> {	[	  p,	P		]	};
 
-    key <AC01> {	[	  a,	A 		]	};
-    key <AC02> {	[	  s,	S		]	};
-    key <AC03> {	[	  d,	D		]	};
-    key <AC04> {	[	  f,	F		]	};
+    key <AC01> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	a, A, Left, Left	]	};
+    key <AC02> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	s, S, Down, Down	]	};
+    key <AC03> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	d, D, Up, Up		]	};
+    key <AC04> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	f, F, Right, Right	]	};
     key <AC05> {	[	  g,	G		]	};
     key <AC06> {	[ backslash,         bar	]	};
     key <AC07> {	[ apostrophe,	quotedbl	]	};
-    key <AC08> {	[	h, H, Left, Left	]	};
-    key <AC09> {	[	j, J, Down, Down	]	};
-    key <AC10> {	[	k, K, Up, Up		]	};
-    key <AC11> {	[	l, L, Right, Right	]	};
+    key <AC08> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	h, H, Left, Left	]	};
+    key <AC09> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	j, J, Down, Down	]	};
+    key <AC10> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	k, K, Up, Up		]	};
+    key <AC11> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	l, L, Right, Right	]	};
 
     key <AB01> {	[	  z,	Z 		]	};
     key <AB02> {	[	  x,	X		]	};
@@ -199,11 +231,6 @@ xkb_symbols "basic" {
     key <AB10> {	[     slash,	question	]	};
 
     key <BKSL> {	[ semicolon,	colon		]	};
-
-    key <LSGT> {
-        type[Group1]="ONE_LEVEL",
-        symbols[Group1]= [        ISO_Level3_Shift ]
-    };
 
     // End alphanumeric section
 
@@ -236,13 +263,35 @@ xkb_symbols "basic" {
         symbols[Group1]= [        ISO_Level3_Shift ]
     };
 
+    key <LALT> {
+        type[Group1]="ONE_LEVEL",
+        symbols[Group1]= [        ISO_Level3_Shift ]
+    };
+
+    key <LWIN> {
+        type[Group1]="ONE_LEVEL",
+        symbols[Group1]= [        Alt_L ]
+    };
+
+    key <LSGT> {
+        type[Group1]="ONE_LEVEL",
+        symbols[Group1]= [        Super_L ]
+    };
+
     modifier_map Control { <DOWN> };
     modifier_map Control { <RGHT> };
     modifier_map Shift { <UP> };
-    modifier_map Mod1 { <RCTL> };
+//not sure why we're mapping <RCTL> to Mod1... this is weird...
+//actually, it shouldn't even work, because ctrl modifies keys in hardware,
+//changing the scan codes before xkb can even get its hands on em...
     modifier_map Mod1 { <RALT> };
+//<LWIN> remapped to left alt
+    modifier_map Mod1 { <LWIN> };
+//<LSGT> remapped to win key
+    modifier_map Mod4 { <LSGT> };
+//we map a bunch of key to ISO Level3 Shift
     modifier_map Mod5 { ISO_Level3_Shift };
-    modifier_map Mod5 { <LSGT> };
     modifier_map Mod5 { <LEFT> };
     modifier_map Mod5 { <MENU> };
+    modifier_map Mod5 { <LALT> };
 };
