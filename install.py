@@ -182,6 +182,17 @@ def add_xml(xml_file, symbols_file):
     print 'Updating XML file: `%s\'' % (xml_file)
     t.write(xml_file)
 
+def check_can_copy(source, target, what):
+    errors = []
+    if not os.path.exists(source):
+        errors.append('Cannot find the %s file %s' % (what, source))
+    target_dir = os.path.dirname(os.path.abspath(target))
+    if not os.path.exists(target_dir):
+        errors.append('Cannot find %s directory %s' % (what, target_dir))
+    if not os.access(target_dir, os.W_OK):
+        errors.append('Cannot write to the %s directory %s' % (what, target_dir))
+    return errors
+
 def copy_file(source, target, what):
     """ Copies the file from source to target. Really just a wrapper.
         """
@@ -201,16 +212,6 @@ def install(
 
     errors = []
 
-    def check_can_copy(source, target, what):
-        errors = []
-        if not os.path.exists(source):
-            errors.append('Cannot find the %s file %s' % (what, source))
-        target_dir = os.path.dirname(os.path.abspath(target))
-        if not os.path.exists(target_dir):
-            errors.append('Cannot find %s directory %s' % (what, target_dir))
-        if not os.access(target_dir, os.W_OK):
-            errors.append('Cannot write to the %s directory %s' % (what, target_dir))
-        return errors
 
     # prepare stuff for copying the symbols file
     symbols_target = os.path.join(dirname, symbols_dir, symbols_target_basename)
