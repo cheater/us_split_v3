@@ -1,0 +1,30 @@
+partial default xkb_types "default" {
+
+    // Definition for a key type which
+    // can be used to implement ISO9995
+    // style level three shift, with the
+    // Shift modifier still available.
+    virtual_modifiers LevelThree;
+
+    type "THREE_LEVEL_SHIFTABLE" {
+	modifiers = Shift+LevelThree;
+	map[None] = Level1;
+	map[Shift] = Level2;
+	map[LevelThree] = Level3;
+	//preserve[LevelThree] = None;
+	map[Shift+LevelThree] = Level3;
+	//preserve[Shift+LevelThree] = Shift;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "Shift";
+	level_name[Level3] = "Level3";
+    };
+
+    type "ONE_LEVEL_FOR_ISO_LEVEL_3_SHIFT" {
+        modifiers = LevelThree;
+        map[None] = Level1;
+        preserve[None] = None;
+        map[LevelThree] = Level1;
+        preserve[LevelThree] = None;
+        level_name[Level1] = "Base";
+    };
+};
