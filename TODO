@@ -10,3 +10,13 @@ XKBMODEL="pc104"  ##For a 104-key keyboard of course.
 XKBLAYOUT="us,gr,ru"
 XKBVARIANT="alt-intl,,phonetic"
 XKBOPTIONS="terminate:ctrl_alt_bksp,compose:rwin,grp:lwin_toggle,grp_led:scroll"
+* try to use redirects for the level 3 arrow keys to fix things like pluma (gedit) not selecting text on shift+ISO_Level_3_Shift+hjkl.
+In theory, this should work:
+    key <AC08> {
+	type[Group1]="THREE_LEVEL_SHIFTABLE",
+	symbols[Group1]=[	h, H, Left, Left	],
+	actions[Group1]=[ NoAction(), NoAction(), RedirectKey(key=<LEFT>), RedirectKey(key=<LEFT>, modifiers=Shift) ] };
+
+but instead it makes the key not work at all when ISO_Level3_Shift is used.
+* try to use redirects somehow to make dict.leo.org stop receiving altgr (which is the same thing as ISO_Level3_Shift). Or perhaps just use another key for the modifier? Hyper? ISO Level 5?
+* fix the installer to add the types to types/basic.
