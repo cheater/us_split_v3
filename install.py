@@ -257,7 +257,7 @@ def main():
         '-s',
         '--symbols-directory',
         dest='symbols_dir',
-        help='use DIRNAME as the symbols dir, default: `%s\'' % d,
+        help='use DIRNAME as the symbols target dir, default: `%s\'' % d,
         metavar='DIRNAME',
         default=d,
         )
