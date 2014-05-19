@@ -3,3 +3,10 @@
 * make right enter ctrl
 * make left shift tab
 * make left tab shift
+* use evdev.extras.xml instead of evdev.xml. See if that works at all.
+* check this for more options for the console: http://web.archive.org/web/20100413120621/http://www.jw-stumpel.nl/stestu.html
+in specific:
+XKBMODEL="pc104"  ##For a 104-key keyboard of course.
+XKBLAYOUT="us,gr,ru"
+XKBVARIANT="alt-intl,,phonetic"
+XKBOPTIONS="terminate:ctrl_alt_bksp,compose:rwin,grp:lwin_toggle,grp_led:scroll"
