@@ -190,7 +190,7 @@ def check_can_copy(source, target, what):
     if not os.path.exists(target_dir):
         errors.append('Cannot find %s directory %s' % (what, target_dir))
     if not os.access(target_dir, os.W_OK):
-        errors.append('Cannot write to the %s directory %s' % (what, target_dir))
+        errors.append('Cannot write the %s directory %s' % (what, target_dir))
     return errors
 
 def copy_file(source, target, what):
