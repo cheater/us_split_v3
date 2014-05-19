@@ -167,20 +167,20 @@ def add_xml(xml_file, symbols_file):
     t = ET.parse(xml_file)
     for ll in [x for x in t.getroot().getchildren() if x.tag == 'layoutList']:
         # XML is ugly even if it's not XML.
-        layout      =  se(ll,       'layout'            )
-        ci          =  se(layout,   'configItem'        )
-        name        =  se(ci,       'name'              )
-        name.text   =     symbols_file
-        sdesc       =  se(ci,       'shortDescription'  )
-        sdesc.text  =     'U_SA_6_2_0_1'
-        desc        =  se(ci,       'description'       )
-        desc.text   =     'USA Split (Cherry KW 6000/Perixx Periboard '\
+        layout       = se( ll,        'layout'           )
+        ci           = se( layout,    'configItem'       )
+        name         = se( ci,        'name'             )
+        name.text    =    symbols_file
+        sdesc        = se( ci,        'shortDescription' )
+        sdesc.text   =    'U_SA_6_2_0_1'
+        desc         = se( ci,        'description'      )
+        desc.text    =    'USA Split (Cherry KW 6000/Perixx Periboard '\
                           '804/804i, two ISO Level 3 Shift keys, v0.1)'
-        langs       =  se(ci,       'languageList'      )
-        lang        =  se(langs,    'iso639Id'          )
-        lang.text   =     'eng'
-        countries   =  se(ci,       'countryList'       )
-        country     =  se(countries,'iso3166Id'         )
+        langs        = se( ci,        'languageList'     )
+        lang         = se( langs,     'iso639Id'         )
+        lang.text    =    'eng'
+        countries    = se( ci,        'countryList'      )
+        country      = se( countries, 'iso3166Id'        )
         country.text =    'US'
     print 'Updating XML file: `%s\'' % (xml_file)
     t.write(xml_file)
