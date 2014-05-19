@@ -343,8 +343,12 @@ def main():
         )
 
     options = parser.parse_args()[0]
-    if options.only_delete_cache: return delete_cache()
-    else: return install(**options.__dict__)
+    if options.only_delete_cache:
+        return delete_cache()
+    else:
+        d = options.__dict__
+        d.pop('only_delete_cache', None)
+        return install(**d)
 
 if '__main__' == __name__:
     try:
