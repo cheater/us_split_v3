@@ -179,6 +179,9 @@ def add_xml(xml_file, symbols_file):
         langs       =  se(ci,       'languageList'      )
         lang        =  se(langs,    'iso639Id'          )
         lang.text   =     'eng'
+        countries   =  se(ci,       'countryList'       )
+        country     =  se(countries,'iso3166Id'         )
+        country.text =    'US'
     print 'Updating XML file: `%s\'' % (xml_file)
     t.write(xml_file)
 
