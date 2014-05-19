@@ -105,6 +105,10 @@ of the xkb directory. A restart of your X server might now be required. That
 should be all that is necessary; this installation procedure has, however,
 not been tested.
 
+Note there is an example file called etc-default-keyboard. It's an example of
+the file /etc/default/keyboard, which should normally be sourced by the file
+/etc/default/console. It sets the layout that is loaded in the TTYs.
+
 
 USAGE
 
