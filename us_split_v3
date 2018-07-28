@@ -148,6 +148,7 @@ xkb_symbols "basic" {
     name[Group1]= "USA Split";
 
     // Alphanumeric section
+    // Numbers row
     key <TLDE> {	[     grave,	asciitilde	]	};
     key <AE01> {	[	  1,	exclam 		]	};
     key <AE02> {	[	  2,	at		]	};
@@ -162,6 +163,7 @@ xkb_symbols "basic" {
     key <AE11> {	[	  9,	parenleft	]	};
     key <AE12> {	[	  0,	parenright	]	};
 
+    // Q-P row
     key <AD01> {
 	type[Group1]="THREE_LEVEL_SHIFTABLE",
 	symbols[Group1]=[	  q, Q, Home, Home	]	};
@@ -191,6 +193,7 @@ xkb_symbols "basic" {
 	symbols[Group1]=[	  o, O, End, End	]	};
     key <AD12> {	[	  p,	P		]	};
 
+    // A-L row
     key <AC01> {
 	type[Group1]="THREE_LEVEL_SHIFTABLE",
 	symbols[Group1]=[	a, A, Left, Left	]	};
@@ -219,6 +222,12 @@ xkb_symbols "basic" {
 	type[Group1]="THREE_LEVEL_SHIFTABLE",
 	symbols[Group1]=[	l, L, Right, Right	]	};
 
+    // in the European layout, backslash is between the quote key and the enter
+    // key. The enter key is less wide in this row, and also occupies the place
+    // in the Q-P row.
+    key <BKSL> {	[ semicolon,	colon		]	};
+
+    // Z-M row
     key <AB01> {	[	  z,	Z 		]	};
     key <AB02> {	[	  x,	X		]	};
     key <AB03> {	[	  c,	C		]	};
@@ -230,8 +239,6 @@ xkb_symbols "basic" {
     key <AB09> {	[	  m,	M		]	};
     key <AB10> {	[     slash,	question	]	};
 
-    key <BKSL> {	[ semicolon,	colon		]	};
-
     // End alphanumeric section
 
     // Swap Caps Lock and Escape.
@@ -239,59 +246,37 @@ xkb_symbols "basic" {
     // key <ESC>  {        [     Caps_Lock    ]       };
     key <ESC> { type[Group1]="TWO_LEVEL", [ Multi_key, Multi_key ] };
 
-    // Make the lower-right corner of the k400/k400r saner.
-    key <UP>   {
-        symbols[Group1]= [       Control_R ],
-        symbols[Group2]= [           Alt_R ]
-       };
-    key <DOWN> {
-        symbols[Group1]= [       Control_R ],
-        symbols[Group2]= [           Alt_R ]
-    };
-    key <RGHT> {
-        symbols[Group1]= [       Control_R ],
-        symbols[Group2]= [           Alt_R ]
-    };
-
-    // Make the left-over left arrow cursor key an ISO Level3 Shift key.
-    key <LEFT> {
-        type[Group1]="ONE_LEVEL",
-        symbols[Group1]= [        ISO_Level3_Shift ]
-    };
     key <MENU> {
         type[Group1]="ONE_LEVEL",
-        symbols[Group1]= [        ISO_Level3_Shift ]
+        symbols[Group1]= [        Alt_R ]
     };
 
     key <LALT> {
         type[Group1]="ONE_LEVEL",
-        symbols[Group1]= [        ISO_Level3_Shift ]
+        symbols[Group1]= [        Alt_L ]
     };
 
     key <LWIN> {
         type[Group1]="ONE_LEVEL",
-        symbols[Group1]= [        Alt_L ]
+        symbols[Group1]= [        Super_L ]
     };
 
+    // LSGT is the extra key in the European layout that is found between the
+    // left Shift and Z.
     key <LSGT> {
         type[Group1]="ONE_LEVEL",
         symbols[Group1]= [        Super_L ]
     };
 
-    modifier_map Control { <DOWN> };
-    modifier_map Control { <RGHT> };
-    modifier_map Shift { <UP> };
-//not sure why we're mapping <RCTL> to Mod1... this is weird...
-//actually, it shouldn't even work, because ctrl modifies keys in hardware,
-//changing the scan codes before xkb can even get its hands on em...
-    modifier_map Mod1 { <RALT> };
-//<LWIN> remapped to left alt
-    modifier_map Mod1 { <LWIN> };
-//<LSGT> remapped to win key
+// <LALT> is Alt
+    modifier_map Mod1 { <LALT> };
+// <MENU> is Alt
+    modifier_map Mod1 { <MENU> };
+// <LWIN> mapped to Super
+    modifier_map Mod4 { <LWIN> };
+// <LSGT> remapped to Super
     modifier_map Mod4 { <LSGT> };
-//we map a bunch of key to ISO Level3 Shift
+// we map a bunch of keys to ISO Level3 Shift
+    modifier_map Mod5 { <RALT> };
     modifier_map Mod5 { ISO_Level3_Shift };
-    modifier_map Mod5 { <LEFT> };
-    modifier_map Mod5 { <MENU> };
-    modifier_map Mod5 { <LALT> };
 };

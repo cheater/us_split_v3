@@ -7,7 +7,7 @@
 # in /etc/X11/xorg.conf.
 
 XKBMODEL="pc105"
-XKBLAYOUT="us_split_kw6000_two_ISO_0_1,us"
+XKBLAYOUT="us_split_v3,us"
 XKBVARIANT=","
 XKBOPTIONS=""
 

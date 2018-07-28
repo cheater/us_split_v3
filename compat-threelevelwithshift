@@ -1,4 +1,4 @@
-// Fairly complete set of symbol interpretations 
+// Fairly complete set of symbol interpretations
 // to provide reasonable default behavior
 
 default partial xkb_compatibility "default"  {

@@ -3,7 +3,7 @@
 """
 NAME
 
-us_split_kw6000
+us_split_v3
 an xkb keyboard layout
 
 
@@ -27,13 +27,13 @@ The changes can be seen easily at the diagrams below:
 
 Normal US-QWERTY:
 
-    Caps F1 ... F12
+    Esc  F1 ... F12
 
      ` 1 2 3 4 5 6 7 8 9 0 - = BBBB
     Tab q w e r t y u i o p [ ] RRR
-    Esc  a s d f g h j k l ; ' \ RR
+    Caps a s d f g h j k l ; ' \ RR
     SS  < z x c v b n m , . / SSSSS
-    CCC W AAA __________ AA RC CCCC
+    CCC W AAA __________ AA MM CCCC
 
 
 This layout:
@@ -44,7 +44,19 @@ This layout:
     Tab q w e r t [ ] y u i o p RRR
     Esc  a s d f g \ ' h j k l ; RR
     SS L3 z x c v , . b n m / SSSSS
-    CCC W Alt __________ AA L3 CCCC
+    CCC W AAA __________ L3 AA CCCC
+
+The shorthands are:
+
+    S = Shift
+    C = Control
+    A = Alt
+    W = Win key (Super key)
+    M = Menu key
+    R = Return key (Enter key)
+    B = Backspace key
+    _ = Space key
+    L3 = ISO Level3 Shift (Alt Gr)
 
 The symbol keys, which do not get typed very often, have been placed in the
 middle. This is analogous to them being out of the reach of the right hand in
@@ -70,14 +82,14 @@ of them was fixing the problem at its source, which is an inadequate layout.
 The key between the left Shift and z is the 105th key. It exists on many
 European keyboards and some people love it, while others hate it with
 passion. The author has been a member of both groups. It is mapped as a
-second Backspace. 
+second Super key.
 
 Caps Lock is placed where Esc was and Esc is placed where Caps Lock was. This
 is hardcoded for now, but might be configurable in the future.
 
 Naturally, this layout can be used in conjunction with GNOME's keyboard
 layout options in order to turn the Caps Lock key into another Escape,
-Control, or Meta key.
+Control, Meta, or Compose key. The author uses it as Compose.
 
 
 INSTALLATION
@@ -101,12 +113,12 @@ On some systems, lst files with the same base names are used instead of xml
 files. Those files are not supported by the installer, however editing them
 by hand is fairly easy; in the !layout section you would add the line:
 
-        us_split_kw6000  USA Split (Cherry KW 6000/Perixx Periboard 804/804i)
+        us_split_v3  USA Split v3
 
-Next, you should copy the us_split_kw6000 file into the "symbols" subdirectory
-of the xkb directory. A restart of your X server might now be required. That
-should be all that is necessary; this installation procedure has, however,
-not been tested.
+Next, you should copy the us_split_v3 file into the "symbols" subdirectory of
+the xkb directory. A restart of your X server might now be required. That
+should be all that is necessary; this installation procedure has, however, not
+been tested.
 
 
 USAGE
@@ -152,9 +164,9 @@ def add_xml(xml_file, symbols_file):
 
     <layout>
       <configItem>
-        <name>us_split_kw6000_two_ISO_0_1</name>
-        <shortDescription>U SA 6</shortDescription>
-        <description>USA Split (Cherry KW 6000/Perixx Periboard 804/804i, two ISO Level 3 Shift Keys, v0.1)</description>
+        <name>us_split_v3</name>
+        <shortDescription>U SA 3</shortDescription>
+        <description>USA Split v3</description>
         <languageList><iso639Id>eng</iso639Id></languageList>
       </configItem>
     </layout>
@@ -172,10 +184,9 @@ def add_xml(xml_file, symbols_file):
         name         = se( ci,        'name'             )
         name.text    =    symbols_file
         sdesc        = se( ci,        'shortDescription' )
-        sdesc.text   =    'U_SA_6_2_0_1'
+        sdesc.text   =    'U_SA_3'
         desc         = se( ci,        'description'      )
-        desc.text    =    'USA Split (Cherry KW 6000/Perixx Periboard '\
-                          '804/804i, two ISO Level 3 Shift keys, v0.1)'
+        desc.text    =    'USA Split v3'
         langs        = se( ci,        'languageList'     )
         lang         = se( langs,     'iso639Id'         )
         lang.text    =    'eng'
@@ -309,7 +320,8 @@ def main():
         default=d,
         )
 
-    d = 'us_split_kw6000_two_ISO_0_1'
+    layout_name = 'us_split_v3'
+    d = layout_name
     parser.add_option(
         '-n',
         '--symbols-target-basename',
@@ -321,7 +333,7 @@ def main():
 
     script_dir = os.path.dirname(sys.argv[0])
     d = os.path.normpath(
-        os.path.join(script_dir, 'us_split_kw6000_two_ISO_0_1')
+        os.path.join(script_dir, layout_name)
         )
     parser.add_option(
         '-f',
