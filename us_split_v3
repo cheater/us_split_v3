@@ -256,6 +256,11 @@ xkb_symbols "basic" {
         symbols[Group1]= [        Alt_L ]
     };
 
+    key <RALT> {
+        type[Group1]="ONE_LEVEL",
+        symbols[Group1]= [        Alt_R ]
+    };
+
     key <LWIN> {
         type[Group1]="ONE_LEVEL",
         symbols[Group1]= [        Super_L ]
@@ -268,8 +273,9 @@ xkb_symbols "basic" {
         symbols[Group1]= [        Super_L ]
     };
 
-// <LALT> is Alt
+// <LALT> is Alt, <RALT> is Alt too
     modifier_map Mod1 { <LALT> };
+    modifier_map Mod1 { <RALT> };
 // <MENU> is Alt
     modifier_map Mod1 { <MENU> };
 // <LWIN> mapped to Super
@@ -277,6 +283,5 @@ xkb_symbols "basic" {
 // <LSGT> remapped to Super
     modifier_map Mod4 { <LSGT> };
 // we map a bunch of keys to ISO Level3 Shift
-    modifier_map Mod5 { <RALT> };
     modifier_map Mod5 { ISO_Level3_Shift };
 };

@@ -44,7 +44,7 @@ This layout:
     Tab q w e r t [ ] y u i o p RRR
     Esc  a s d f g \ ' h j k l ; RR
     SS L3 z x c v , . b n m / SSSSS
-    CCC W AAA __________ L3 AA CCCC
+    CCC W AAA __________ AA AA CCCC
 
 The shorthands are:
 
